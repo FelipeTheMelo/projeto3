@@ -19,7 +19,7 @@ import anotacao.Tabela;
 import anotacao.TipoChave;
 import br.com.melol.dao.Persistente;
 import br.com.melol.dao.generic.jdbc.ConnectionFactory;
-import br.com.melol.domain.Produto;
+import br.com.melol.domain.Venda;
 import br.com.melol.exceptions.DAOException;
 import br.com.melol.exceptions.MaisDeUmRegistroException;
 import br.com.melol.exceptions.TableException;
@@ -342,7 +342,7 @@ public abstract class GenericDAO<T extends Persistente, E extends Serializable> 
     protected void excluir(String codigo) throws DAOException {
     }
 
-    protected Produto consultar(String codigo) throws MaisDeUmRegistroException, TableException, DAOException {
+    protected Venda consultar(String codigo) throws MaisDeUmRegistroException, TableException, DAOException {
         return null;
     }
 

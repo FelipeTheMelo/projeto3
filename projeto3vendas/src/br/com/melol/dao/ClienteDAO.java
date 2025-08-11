@@ -6,6 +6,9 @@ import java.sql.SQLException;
 
 import br.com.melol.dao.generic.GenericDAO;
 import br.com.melol.domain.Cliente;
+import br.com.melol.exceptions.DAOException;
+import br.com.melol.exceptions.MaisDeUmRegistroException;
+import br.com.melol.exceptions.TableException;
 
 public class ClienteDAO extends GenericDAO<Cliente, Long> implements IClienteDAO {
 
@@ -91,5 +94,20 @@ public class ClienteDAO extends GenericDAO<Cliente, Long> implements IClienteDAO
     @Override
     protected void setParametrosQuerySelect(PreparedStatement stmSelect, Long valor) throws SQLException {
         stmSelect.setLong(1, valor);
+    }
+
+    @Override
+    public void excluir(String valor) throws DAOException {
+
+    }
+
+    @Override
+    public void excluir(Long valor) throws DAOException {
+
+    }
+
+    @Override
+    public Cliente consultar(Object valor) throws MaisDeUmRegistroException, TableException, DAOException {
+        return null;
     }
 }

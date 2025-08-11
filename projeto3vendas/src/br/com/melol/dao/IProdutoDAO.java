@@ -7,8 +7,4 @@ import br.com.melol.exceptions.MaisDeUmRegistroException;
 import br.com.melol.exceptions.TableException;
 
 public interface IProdutoDAO<S> extends IGenericDAO<Produto, String>{
-
-    void excluir(E valor) throws DAOException;
-
-    <T> T consultar(Object valor) throws MaisDeUmRegistroException, TableException, DAOException;
 }

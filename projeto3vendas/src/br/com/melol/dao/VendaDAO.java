@@ -43,6 +43,13 @@ public class VendaDAO extends GenericDAO<Venda, String> implements IVendaDAO {
     }
 
     @Override
+    public Venda consultar(Object valor) throws MaisDeUmRegistroException, TableException, DAOException {
+
+
+        return null;
+    }
+
+    @Override
     public void finalizarVenda(Venda venda) throws TipoChaveNaoEncontradaException, DAOException {
 
         Connection connection = null;
