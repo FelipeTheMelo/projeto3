@@ -27,7 +27,7 @@ public interface IGenericDAO <T extends Persistente, E extends Serializable> {
      *
      * @param valor chave única do dado a ser excluído
      */
-    public void excluir(E valor) throws DAOException;
+    public void excluir(String valor) throws DAOException;
 
     /**
      *Método para alterar um registro no bando de dados.

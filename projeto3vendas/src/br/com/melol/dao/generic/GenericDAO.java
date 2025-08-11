@@ -14,10 +14,12 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import anotacao.ColunaTabela;
 import anotacao.Tabela;
 import anotacao.TipoChave;
 import br.com.melol.dao.Persistente;
 import br.com.melol.dao.generic.jdbc.ConnectionFactory;
+import br.com.melol.domain.Produto;
 import br.com.melol.exceptions.DAOException;
 import br.com.melol.exceptions.MaisDeUmRegistroException;
 import br.com.melol.exceptions.TableException;
@@ -25,8 +27,6 @@ import br.com.melol.exceptions.TipoChaveNaoEncontradaException;
 import br.com.melol.exceptions.TipoElementoNaoConhecidoException;
 
 /**
- * @author rodrigo.pires
- *
  * Classe genérica que implementa interface genérica com os métodos de CRUD
  */
 public abstract class GenericDAO<T extends Persistente, E extends Serializable> implements IGenericDAO<T,E> {
@@ -110,7 +110,7 @@ public abstract class GenericDAO<T extends Persistente, E extends Serializable> 
 
 
     @Override
-    public void excluir(E valor) throws DAOException {
+    public void excluir(String valor) throws DAOException {
         Connection connection = getConnection();
         PreparedStatement stm = null;
         try {
@@ -338,4 +338,15 @@ public abstract class GenericDAO<T extends Persistente, E extends Serializable> 
             throw new DAOException("ERRO ABRINDO CONEXAO COM O BANCO DE DADOS ", e);
         }
     }
+
+    protected void excluir(String codigo) throws DAOException {
+    }
+
+    protected Produto consultar(String codigo) throws MaisDeUmRegistroException, TableException, DAOException {
+        return null;
+    }
+
+    public abstract void excluir(E valor) throws DAOException;
+
+    public abstract T consultar(Object valor) throws MaisDeUmRegistroException, TableException, DAOException;
 }

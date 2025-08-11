@@ -6,7 +6,7 @@ import br.com.melol.services.generic.GenericService;
 
 public class ProdutoService extends GenericService<Produto, String> implements IProdutoService {
 
-    public ProdutoService(IProdutoDAO dao) {
+    public ProdutoService(IProdutoDAO<S> dao) {
         super(dao);
     }
 

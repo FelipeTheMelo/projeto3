@@ -12,7 +12,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import br.com.melol.dao.IProdutoDAO;
-import br.com.melol.dao.ProdutoDAO;
 import br.com.melol.domain.Produto;
 import br.com.melol.exceptions.DAOException;
 import br.com.melol.exceptions.MaisDeUmRegistroException;
@@ -21,7 +20,7 @@ import br.com.melol.exceptions.TipoChaveNaoEncontradaException;
 
 public class ProdutoDAOTest {
 
-    private IProdutoDAO produtoDao;
+    private IProdutoDAO<S> produtoDao;
 
     public ProdutoDAOTest() {
         produtoDao = new ProdutoDAO();

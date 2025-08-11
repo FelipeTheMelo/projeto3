@@ -1,14 +1,20 @@
 DROP TABLE IF EXISTS cliente;
 
-CREATE TABLE cliente (
-    cpf VARCHAR(14) PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    tel VARCHAR(20),
-    endereco VARCHAR(150),       -- renomeado de 'end' para 'endereco'
-    numero VARCHAR(10),
-    cidade VARCHAR(50),
-    estado VARCHAR(2)
+DROP TABLE IF EXISTS tb_produto;
+
+CREATE TABLE tb_produto(
+    id bigint PRIMARY KEY,
+    codigo varchar(10) NOT NULL UNIQUE,
+    nome varchar(50) NOT NULL,
+    descricao varchar(100) NOT NULL,
+    valor numeric(10,2) NOT NULL,
+    categoria varchar(50)
 );
+
+CREATE SEQUENCE sq_produto
+START 1
+INCREMENT 1
+OWNED BY tb_produto.id;
 
 INSERT INTO cliente (cpf, nome, tel, endereco, numero, cidade, estado) VALUES
 ('111.111.111-11', 'João Silva', '11999999999', 'Rua A', '100', 'São Paulo', 'SP'),

@@ -21,7 +21,7 @@ public class ProdutoServiceTest {
     private Produto produto;
 
     public ProdutoServiceTest() {
-        IProdutoDAO dao = new ProdutoDaoMock();
+        IProdutoDAO<S> dao = new ProdutoDaoMock();
         produtoService = new ProdutoService(dao);
     }
 

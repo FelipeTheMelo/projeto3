@@ -22,7 +22,6 @@ import br.com.melol.dao.ClienteDAO;
 import br.com.melol.dao.IClienteDAO;
 import br.com.melol.dao.IProdutoDAO;
 import br.com.melol.dao.IVendaDAO;
-import br.com.melol.dao.ProdutoDAO;
 import br.com.melol.dao.VendaDAO;
 import br.com.melol.dao.generic.jdbc.ConnectionFactory;
 import br.com.melol.domain.Cliente;
@@ -40,7 +39,7 @@ public class VendaDAOTest {
 
     private IClienteDAO clienteDao;
 
-    private IProdutoDAO produtoDao;
+    private IProdutoDAO<S> produtoDao;
 
     private Cliente cliente;
 

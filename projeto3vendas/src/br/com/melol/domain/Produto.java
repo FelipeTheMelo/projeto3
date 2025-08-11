@@ -1,24 +1,25 @@
 package br.com.melol.domain;
 
-import java.math.BigDecimal;
-
-import anotacao.Tabela;
-import anotacao.TipoChave;
 import br.com.melol.dao.Persistente;
 
-@Tabela("TB_PRODUTO")
+import java.math.BigDecimal;
+
 public class Produto implements Persistente {
 
     private Long id;
-
-    @TipoChave("getCodigo")
     private String codigo;
-
     private String nome;
-
     private String descricao;
-
     private BigDecimal valor;
+    private String categoria;  // novo campo
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getCodigo() {
         return codigo;
@@ -52,12 +53,11 @@ public class Produto implements Persistente {
         this.valor = valor;
     }
 
-    public Long getId() {
-        return id;
+    public String getCategoria() {
+        return categoria;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
-
 }

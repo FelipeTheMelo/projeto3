@@ -15,7 +15,7 @@ public class ClienteDaoMock implements IClienteDAO {
     }
 
     @Override
-    public void excluir(Long valor) {
+    public void excluir(String valor) {
         // TODO Auto-generated method stub
 
     }
